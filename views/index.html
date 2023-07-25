@@ -16,8 +16,55 @@
       }
     </script>
 <body>
+  <header>
+    <div class="screen_frame">
+      <div class="menu_logo">
+        <img src="../public/image/logo_web_game.png" style="height: 24px;width: 24px;">
+      </div>
+      <div class="menu_navbar">
+        <ul>
+          <li>
+              <a class="active" href="#project">project</a>
+          </li>
+          <li>
+              <a href="#keep">the keep</a>
+          </li>
+          <li>
+              <a href="#factions">factions</a>
+          </li>
+          <li>
+              <a href="#world">the world</a>
+          </li>
+      </ul>
+      </div>
+    </div>
+  </header>
+  <dib class="main">
+    <section id="project">
+      <!-- <div id="abc" style="position: fixed;">          
+      </div> -->
+      <div id="loop">
+        <h1><b>CYBER</b>FICTION IS THE <b><i>REAL</i></b> <span>STORY</span> IN THE <span><i>METAVERSE.</i></span></h1>
+        <h1><b>CYBER</b>FICTION IS THE <b><i>REAL</i></b> <span>STORY</span> IN THE <span><i>METAVERSE.</i></span></h1>
+        <h1><b>CYBER</b>FICTION IS THE <b><i>REAL</i></b> <span>STORY</span> IN THE <span><i>METAVERSE.</i></span></h1>
+      </div>
+      <h3>CYBERFICTION AIMS TO BE A DECENTRALIZED COMMUNITY THAT CAN <br> CREATE NEW VALUES AND PROFITS THROUGH PLAY IN THE VIRTUAL <br> WORLD.</h3>
+      <h4>...SCROLL TO READ</h4>
+      <div class="canvas-container"></div>
+
+  </section>
+  <section id="keep">
+
+  </section>
+  <section id="factions">
+
+  </section>
+  <section id="world">
+  </section>
+  </dib>
+
     <!-- Heard page -->
-    <header>
+    <!-- <header>
         <div class="screen_frame">
             <div class="menu_navbar">
                 <div class="menu">
@@ -51,14 +98,13 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header> -->
 
     <!-- Body page -->
-    <div class="main">
+    <!-- <div class="main">
         <section id="project" style="position: relative;">
             <div id="abc" style="position: fixed;">
                 <div class="screen_content">
-                    <div class="canvas-container"></div>
 
                     <p id="screen_content_header"></p>
                     <div class="screen_content_title">
@@ -81,7 +127,7 @@
         <section id="world" class="reveal">
             <img src="../public/image/final-assasin.jpg">
         </section>
-    </div>
+    </div> -->
 
     <!-- Footer page -->
     <!-- <footer></footer> -->
@@ -98,6 +144,16 @@
     import { FBXLoader } from "../../public/jsm/loaders/FBXLoader.js";
     import { GLTFLoader } from "../../public/jsm/loaders/GLTFLoader.js";
 
+    let mouseX = 0;
+			let mouseY = 0;
+
+			let targetX = 0;
+			let targetY = 0;
+
+			const windowHalfX = window.innerWidth / 2;
+			const windowHalfY = window.innerHeight / 2;
+      let mesh,clock,mixer;
+
     // const tl = gsap.timeline();
     const container = document.querySelector('.canvas-container');
     const camera = new THREE.PerspectiveCamera(
@@ -107,7 +163,7 @@
       1000
     );
     //camera.position.set(900, 400, 900);
-    camera.position.set(-5, 5, 10);
+    camera.position.set(0, 6, 8);
 
     const scene = new THREE.Scene();
 
@@ -137,10 +193,15 @@
     const loader = new GLTFLoader();
 
     loader.load("../../public/models/JinxPoseRender.glb", ( gltf ) => {
-      gltf.scene.scale.set(5, 5, 5);
-      gltf.scene.rotation.y = 5
-    //   gltf.scene.position.y = -3
-      scene.add( gltf.scene );
+      mesh = gltf.scene
+      mesh.scale.set(6, 6, 6);
+      scene.add( mesh );
+      const animations = gltf.animations;
+
+
+					mixer = new THREE.AnimationMixer( mesh );
+          const waveAction = mixer.clipAction( animations[ 0 ] );
+          waveAction.play()
     });
 
     const renderer = new THREE.WebGLRenderer({
@@ -157,6 +218,7 @@
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     container.appendChild(renderer.domElement);
 
+    document.addEventListener( 'mousemove', onDocumentMouseMove );
     window.addEventListener("resize", onWindowResize, false);
 
     function onWindowResize() {
@@ -166,25 +228,29 @@
       render();
     }
 
+    function onDocumentMouseMove( event ) {
+      mouseX = ( event.clientX - windowHalfX );
+      mouseY = ( event.clientY - windowHalfY );
+    }
+
+    clock = new THREE.Clock();
     function animate() {
       requestAnimationFrame(animate);
+      var delta = clock.getDelta();
+  
+    if ( mixer ) mixer.update( delta );
       render();
     }
 
     function render() {
+      targetX = mouseX * .001;
+				// targetY = mouseY * .001;
+
+				if ( mesh ) {
+					mesh.rotation.y += 0.05 * ( targetX - mesh.rotation.y );
+					// mesh.rotation.x += 0.05 * ( targetY - mesh.rotation.x );
+				}
       renderer.render(scene, camera);
-    }   
-
-    let oldx = 0
-    let oldy = 0
-    window.onmousemove = function(ev) {
-        let changeX = ev.x - oldx
-        let changeY = ev.y - oldy
-        camera.position.x += changeX/1000
-        camera.position.y += changeY/1000
-
-        oldx = ev.x
-        oldy = ev.y
     }
 
     animate();   
