@@ -196,6 +196,7 @@ html,
 body {
   height: 100%;
   width: 100%;
+  background-color: #f1f1f1;
 }
 .main {
   position: relative;
@@ -205,7 +206,6 @@ body {
   position: relative;
   height: 100vh;
   /* width: 100vw; */
-  background-color: #f1f1f1;
 }
 canvas {
   position: absolute;
@@ -260,13 +260,253 @@ canvas {
   font-weight: 500;
 }
 
+header {
+  position: fixed;
+  z-index: 2;
+  height: 7%;
+  width: 100%;
+}
+
+header.sticky .screen_frame {
+  padding: 20px 100px;
+  background-color: #000;
+}
+
+header.sticky .screen_frame .menu_logo img {
+  filter: invert(0);
+}
+
+header.sticky .screen_frame .menu_navbar ul > li > a {
+  color: white;
+}
+
 header .screen_frame {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 7%;
+  padding: 40px 100px;
+  transition: 0.6s;
+}
+
+header .screen_frame .menu_logo {
+  position: relative;
+}
+header .screen_frame .menu_logo img {
+  filter: invert(1);
+}
+
+header .screen_frame .menu_navbar ul {
+  position: relative;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
   width: 100%;
-  position: fixed;
-  z-index: 99;
-  padding: 0px 30px;
+}
+
+header .screen_frame .menu_navbar ul > li > a {
+  position: relative;
+  text-transform: uppercase;
+  text-decoration: unset;
+  color: black;
+  opacity: 0.8;
+  padding: 0 10px;
+}
+
+header .screen_frame .menu_navbar ul > li > a::after {
+  content: "";
+  position: absolute;
+  background-color: #000;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+header.sticky .screen_frame .menu_navbar ul > li > a::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+
+header .screen_frame .menu_navbar ul > li > a:hover::after {
+  width: 100%;
+}
+
+header .screen_frame .menu_navbar ul > li > a:hover {
+  opacity: 1;
+}
+
+.group,
+.characters {
+  padding: 100px;
+}
+
+.group .group_picture {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.group .group_picture .list_group {
+  margin-left: 60px;
+  list-style: none;
+}
+
+.group .group_picture .list_group .list_item .introduction {
+  height: 0;
+  box-sizing: border-box;
+  padding-left: 50px;
+  overflow: hidden;
+  transition: all 0.4s linear;
+  font-size: 22px;
+  line-height: 1.2em;
+  white-space: pre;
+  color: white;
+  text-transform: uppercase;
+}
+.group .group_picture .list_group .list_item.active .introduction {
+  margin-top: 20px;
+  height: 7.2em;
+  overflow: hidden;
+}
+
+.group .group_picture .list_group .list_item.necromancer .brief .icon {
+  background-position-y: -476px;
+}
+.group .group_picture .list_group .list_item.demon_hunter .brief .icon {
+  background-position-y: 8px;
+}
+.group .group_picture .list_group .list_item.mage .brief .icon {
+  background-position-y: -153px;
+}
+.group .group_picture .list_group .list_item.barbarian .brief .icon {
+  background-position-y: -153px;
+}
+.group .group_picture .list_group .list_item {
+  width: 100%;
+  position: relative;
+  left: 0;
+  transition: all 0.4s linear;
+}
+.group .group_picture .list_group .list_item.active {
+  left: -60px;
+}
+.group .group_picture .list_group .list_item.active .brief .icon {
+  background-position-x: -90px;
+  transition: background-position-x 0.5s cubic-bezier(0.45, -0.62, 0.48, 1.69);
+}
+.group .group_picture .list_group .list_item.active .brief .name {
+  color: white;
+  text-shadow: 0 1px 5px #ff6c00;
+}
+.group .group_picture .list_group .list_item:hover .brief .icon {
+  background-position-x: -90px;
+  transition: background-position-x 0.5s cubic-bezier(0.45, -0.62, 0.48, 1.69);
+}
+.group .group_picture .list_group .list_item:hover .brief .name {
+  color: white;
+  text-shadow: 0 1px 5px #ff6c00;
+}
+
+.group .group_picture .list_group .list_item .brief {
+  width: 472px;
+  height: 101px;
+  background-image: url("../image/role_name_bg.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  position: relative;
+  padding-left: 120px;
+  box-sizing: border-box;
+  margin-top: 40px;
+  cursor: pointer;
+}
+.group .group_picture .list_group .list_item .brief .icon {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 10px;
+  left: 11px;
+  border-radius: 50%;
+  background-image: url("../image/icons.png");
+  background-size: 169px 550px;
+  background-position-x: 10px;
+  background-repeat: no-repeat;
+}
+.group .group_picture .list_group .list_item .brief .name {
+  color: #a7b8b0;
+  font-size: 24px;
+  font-family: Text_2, sans-serif;
+  word-break: keep-all;
+  white-space: nowrap;
+  min-width: calc(100% - 120px);
+  text-align: center;
+  overflow: visible;
+  text-transform: capitalize;
+  transition: color 0.3s linear;
+}
+
+.group .group_information,
+.characters .characters_information {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.group .group_information h1,
+.characters .characters_information h1 {
+  font-size: 44px;
+  line-height: 1.5;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.characters .characters_picture {
+  max-width: 1440px;
+  height: 700px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.characters .characters_picture .tab {
+  position: relative;
+  width: 20%;
+  height: inherit;
+  padding: 20px;
+  cursor: pointer;
+  transition: width 0.5s ease;
+  border-radius: 25px;
+}
+.characters .characters_picture .tab img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+  border-radius: 25px;
+}
+.characters .characters_picture .tab:hover img {
+  opacity: 0.6;
+}
+.characters .characters_picture .tab:hover {
+  width: 100%;
 }
