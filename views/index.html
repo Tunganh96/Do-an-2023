@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../public/css/styles.css">
-    <script src="../../public/jsm/three.min.js"></script>
-    <script type="importmap">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="../public/css/styles.css">
+  <script src="../../public/jsm/three.min.js"></script>
+  <script type="importmap">
       {
         "imports": {
           "three": "https://unpkg.com/three@0.138.0/build/three.module.js",
@@ -15,6 +16,7 @@
         }
       }
     </script>
+
 <body>
   <header>
     <div class="screen_frame">
@@ -24,22 +26,22 @@
       <div class="menu_navbar">
         <ul>
           <li>
-              <a class="active" href="#project">project</a>
+            <a class="active" href="#project">project</a>
           </li>
           <li>
-              <a href="#keep">the keep</a>
+            <a href="#keep">the keep</a>
           </li>
           <li>
-              <a href="#factions">factions</a>
+            <a href="#factions">factions</a>
           </li>
           <li>
-              <a href="#world">the world</a>
+            <a href="#world">the world</a>
           </li>
-      </ul>
+        </ul>
       </div>
     </div>
   </header>
-  <dib class="main">
+  <div class="main">
     <section id="project">
       <!-- <div id="abc" style="position: fixed;">          
       </div> -->
@@ -48,297 +50,300 @@
         <h1><b>CYBER</b>FICTION IS THE <b><i>REAL</i></b> <span>STORY</span> IN THE <span><i>METAVERSE.</i></span></h1>
         <h1><b>CYBER</b>FICTION IS THE <b><i>REAL</i></b> <span>STORY</span> IN THE <span><i>METAVERSE.</i></span></h1>
       </div>
-      <h3>CYBERFICTION AIMS TO BE A DECENTRALIZED COMMUNITY THAT CAN <br> CREATE NEW VALUES AND PROFITS THROUGH PLAY IN THE VIRTUAL <br> WORLD.</h3>
+      <h3>CYBERFICTION AIMS TO BE A DECENTRALIZED COMMUNITY THAT CAN <br> CREATE NEW VALUES AND PROFITS THROUGH PLAY IN
+        THE VIRTUAL <br> WORLD.</h3>
       <h4>...SCROLL TO READ</h4>
       <div class="canvas-container"></div>
-  </section>
-  <section id="keep">
-    <div class="characters">
-      <div class="characters_information">
-        <h1 style="font-size: 60px;">the keep</h1>
-        <span class="spacer"> </span>
-        <h6 style="font-size: 20px;">The last stronghold of all knowledge. The Keep</h6>
-        <h6 style="font-size: 20px;">is where all the value accrues. A place to</h6>
-        <h6 style="font-size: 20px;">wonder, protect, and fight for.</h6>
-      </div>
-      <div class="characters_picture">
-        <div class="tab">
-          <img src="../public/image/assasin.jpg">
+    </section>
+    <section id="keep">
+      <div class="characters">
+        <div class="characters_information">
+          <h1 style="font-size: 60px;text-transform: uppercase;">the keep</h1>
+          <span class="spacer"> </span>
+          <h6 style="font-size: 20px;text-transform: uppercase;">The last stronghold of all knowledge. The Keep</h6>
+          <h6 style="font-size: 20px;text-transform: uppercase;">is where all the value accrues. A place to</h6>
+          <h6 style="font-size: 20px;text-transform: uppercase;">wonder, protect, and fight for.</h6>
         </div>
-        <div class="tab">
-          <img src="../public/image/final-assasin.jpg">
-        </div>
-        <div class="tab">
-          <img src="../public/image/narkarok.jpg">
-        </div>
-        <div class="tab">
-          <img src="../public/image/red-hood.jpg">
-        </div>
-        <div class="tab">
-          <img src="../public/image/robot-girl.jpg">
-        </div>
-        <div class="tab">
-          <img src="../public/image/shen.jpg">
-        </div>
-        <div class="tab">
-          <img src="../public/image/thresh.jpg">
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="factions" style="background: center center / cover url('../public/image/necromancer.jpg');">
-    <div class="group">
-      <div class="group_information">
-        <h1 style="font-size: 60px; color: #c7c7c7; text-transform: uppercase;">the factions</h1>
-        <span class="spacer"> </span>
-        <h6 style="font-size: 20px; color: #c7c7c7; text-transform: uppercase;">One world, two factions. Divided in belief, united in purpose.</h6>
-      </div>
-      <div class="group_picture">
-        <ul class="list_group">
-          <li class="list_item necromancer active" onclick="changeBackground('necromancer')">
-            <div class="brief">
-              <i class="icon"></i>
-              <h2 class="name">necromancer</h2>              
-            </div>
-            <div class="introduction">
-              Necromancers control powerful death magic 
-              and fight to maintain the delicate balance 
-              between order and chaos. 
-              They lay down spell formations 
-              to summon various creatures for battle.</div>
-          </li>
-          <li class="list_item demon_hunter" onclick="changeBackground('demon_hunter')">
-            <div class="brief">
-              <i class="icon"></i>
-              <h2 class="name"> demon hunter</h2>
-            </div>
-            <div class="introduction">
-              Demon hunters have the accuracy 
-              of a hundred paces and can easily snipe 
-              strong monsters from a distance, 
-              and any target objects will be instantly 
-              taken care of by them from a distance.</div>
-          </li>
-          <li class="list_item mage" onclick="changeBackground('mage')">
-            <div class="brief">
-              <i class="icon"></i>
-              <h2 class="name">mage</h2>
-            </div>
-            <div class="introduction">
-              Mages are spellcasters who use their bodies 
-              as conductors of secret energy, 
-              manipulating various powers to disintegrate, 
-              burn and freeze their enemies.</div>
-          </li>
-          <li class="list_item barbarian" onclick="changeBackground('barbarian')">
-            <div class="brief">
-              <i class="icon"></i>
-              <h2 class="name">barbarian</h2>
-            </div>
-            <div class="introduction"> 
-              Close combat is the barbarian's specialty, 
-              powerful trampling, harsh jumping 
-              and slashing to make his enemies fall to their feet.</div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  <section id="world">
-  </section>
-  </dib>
-
-    <!-- Heard page -->
-    <!-- <header>
-        <div class="screen_frame">
-            <div class="menu_navbar">
-                <div class="menu">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" id="menu">
-                        <path fill="#fff"
-                            d="M3 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm0 6a1 1 0 0 1 1-1h16a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1zm1 5a1 1 0 1 0 0 2h16a1 1 0 1 0 0-2H4z">
-                        </path>
-                    </svg>
-                </div>
-                <ul>
-                    <li>
-                        <a class="active" href="#project">project</a>
-                    </li>
-                    <li>
-                        <a href="#keep">the keep</a>
-                    </li>
-                    <li>
-                        <a href="#factions">factions</a>
-                    </li>
-                    <li>
-                        <a href="#world">the world</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="menu_logo">
-                <div class="logo">
-                    <img src="../public/image/logo_web_game.png" style="height: 24px;width: 24px;">
-                </div>
-                <div class="screen_content" style="pointer-events: none">
-
-                </div>
-            </div>
-        </div>
-    </header> -->
-
-    <!-- Body page -->
-    <!-- <div class="main">
-        <section id="project" style="position: relative;">
-            <div id="abc" style="position: fixed;">
-                <div class="screen_content">
-
-                    <p id="screen_content_header"></p>
-                    <div class="screen_content_title">
-                        <h1>project</h1>
-                        <h1>technology</h1>
-                        <h1>characters</h1>
-                    </div>
-                </div>
-            </div>
-            <img src="../public/image/red-hood.jpg"> 
-        </section>
-        <section id="keep" class="reveal">
-            <img src="../public/image/thresh.jpg">
-
-        </section>
-        <section id="factions" class="reveal">
-            <img src="../public/image/robot-girl.jpg">
-
-        </section>
-        <section id="world" class="reveal">
+        <div class="characters_picture">
+          <div class="tab">
+            <img src="../public/image/assasin.jpg">
+          </div>
+          <div class="tab">
             <img src="../public/image/final-assasin.jpg">
-        </section>
-    </div> -->
+          </div>
+          <div class="tab">
+            <img src="../public/image/narkarok.jpg">
+          </div>
+          <div class="tab">
+            <img src="../public/image/red-hood.jpg">
+          </div>
+          <div class="tab">
+            <img src="../public/image/robot-girl.jpg">
+          </div>
+          <div class="tab">
+            <img src="../public/image/shen.jpg">
+          </div>
+          <div class="tab">
+            <img src="../public/image/thresh.jpg">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="factions" style="background: center center / cover url('../public/image/necromancer.jpg');">
+      <div class="group">
+        <div class="group_information">
+          <h1 style="font-size: 60px; color: #c7c7c7; text-transform: uppercase;">the factions</h1>
+          <span class="spacer"> </span>
+          <h6 style="font-size: 20px; color: #c7c7c7; text-transform: uppercase;">One world, two factions. Divided in
+            belief, united in purpose.</h6>
+        </div>
+        <div class="group_picture">
+          <ul class="list_group">
+            <li class="list_item necromancer active" onclick="changeBackground('necromancer')">
+              <div class="brief">
+                <i class="icon"></i>
+                <h2 class="name">necromancer</h2>
+              </div>
+              <div class="introduction">
+                Necromancers control powerful death magic
+                and fight to maintain the delicate balance
+                between order and chaos.
+                They lay down spell formations
+                to summon various creatures for battle.</div>
+            </li>
+            <li class="list_item demon_hunter" onclick="changeBackground('demon_hunter')">
+              <div class="brief">
+                <i class="icon"></i>
+                <h2 class="name"> demon hunter</h2>
+              </div>
+              <div class="introduction">
+                Demon hunters have the accuracy
+                of a hundred paces and can easily snipe
+                strong monsters from a distance,
+                and any target objects will be instantly
+                taken care of by them from a distance.</div>
+            </li>
+            <li class="list_item mage" onclick="changeBackground('mage')">
+              <div class="brief">
+                <i class="icon"></i>
+                <h2 class="name">mage</h2>
+              </div>
+              <div class="introduction">
+                Mages are spellcasters who use their bodies
+                as conductors of secret energy,
+                manipulating various powers to disintegrate,
+                burn and freeze their enemies.</div>
+            </li>
+            <li class="list_item barbarian" onclick="changeBackground('barbarian')">
+              <div class="brief">
+                <i class="icon"></i>
+                <h2 class="name">barbarian</h2>
+              </div>
+              <div class="introduction">
+                Close combat is the barbarian's specialty,
+                powerful trampling, harsh jumping
+                and slashing to make his enemies fall to their feet.</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="world">
+      <div class="event_world">
+        <div class="event_information">
+          <h1 style="font-size: 60px; color: #c7c7c7; text-transform: uppercase;">the world</h1>
+          <span class="spacer"> </span>
+          <h6 style="font-size: 20px; color: #c7c7c7; text-transform: uppercase;">The discovery of Kai, the world's
+            primordial</h6>
+          <h6 style="font-size: 20px; color: #c7c7c7; text-transform: uppercase;">energy source, heralded mankind's
+            Golden Age.</h6>
+          <h6 style="font-size: 20px; color: #c7c7c7; text-transform: uppercase;">Or so they believed.</h6>
+        </div>
+        <div class="event_picture">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="../public/image/red-hood.jpg" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="../public/image/robot-girl.jpg" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="../public/image/shen.jpg" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="../public/image/thresh.jpg" alt="">
+              </div>
+            </div>
 
-    <!-- Footer page -->
-    <!-- <footer></footer> -->
-    <script src="../public/js/index.js" />
+            <div class="swiper-pagination"></div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <div class="footer">
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="wave"></div>
+    <div class="name_footer">
+      <div>
+        <h1>VU ANH TUNG</h1>
+        <p>Copyright @2023</p>
+      </div>
+    </div>
+  </div>
+  <script src="../public/js/index.js"></script>
 </body>
 
-  <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>  
+<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/gsap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.3.3/dist/echarts.min.js"></script>
 
-  <script type="module">
-    import { OrbitControls } from "../../public/jsm/controls/OrbitControls.js";
-    import { FBXLoader } from "../../public/jsm/loaders/FBXLoader.js";
-    import { GLTFLoader } from "../../public/jsm/loaders/GLTFLoader.js";
+<script type="module">
+  import { OrbitControls } from "../../public/jsm/controls/OrbitControls.js";
+  import { FBXLoader } from "../../public/jsm/loaders/FBXLoader.js";
+  import { GLTFLoader } from "../../public/jsm/loaders/GLTFLoader.js";
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.mjs'
 
-    let mouseX = 0;
-			let mouseY = 0;
+  let mouseX = 0;
+  let mouseY = 0;
 
-			let targetX = 0;
-			let targetY = 0;
+  let targetX = 0;
+  let targetY = 0;
 
-			const windowHalfX = window.innerWidth / 2;
-			const windowHalfY = window.innerHeight / 2;
-      let mesh,clock,mixer;
+  const windowHalfX = window.innerWidth / 2;
+  const windowHalfY = window.innerHeight / 2;
+  let mesh, clock, mixer;
 
-    // const tl = gsap.timeline();
-    const container = document.querySelector('.canvas-container');
-    const camera = new THREE.PerspectiveCamera(
-      85,
-      window.innerWidth / window.innerHeight,
-      1,
-      1000
-    );
-    //camera.position.set(900, 400, 900);
-    camera.position.set(0, 6, 8);
+  // const tl = gsap.timeline();
+  const container = document.querySelector('.canvas-container');
+  const camera = new THREE.PerspectiveCamera(
+    85,
+    window.innerWidth / window.innerHeight,
+    1,
+    1000
+  );
+  //camera.position.set(900, 400, 900);
+  camera.position.set(0, 6, 8);
 
-    const scene = new THREE.Scene();
+  const scene = new THREE.Scene();
 
-    scene.background = null
-    // scene.fog = new THREE.Fog("#27313A", 150, 250);
+  scene.background = null
+  // scene.fog = new THREE.Fog("#27313A", 150, 250);
 
-    const ambientLight = new THREE.AmbientLight("#FFFFFF");
-    scene.add(ambientLight);
+  const ambientLight = new THREE.AmbientLight("#FFFFFF");
+  scene.add(ambientLight);
 
-    const hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff);
-    hemiLight.position.set(10, 20, 10);
-    scene.add(hemiLight);
+  const hemiLight = new THREE.HemisphereLight(0xffffff, 0xffffff);
+  hemiLight.position.set(10, 20, 10);
+  scene.add(hemiLight);
 
-    const dirLight = new THREE.DirectionalLight("#ffffff");
-    dirLight.position.set(10, 20, 10);
-    dirLight.intensity = 1;
-    dirLight.castShadow = true;
-    dirLight.shadow.camera.top = 1000;
-    dirLight.shadow.camera.bottom = -1000;
-    dirLight.shadow.camera.left = -1000;
-    dirLight.shadow.camera.right = 1000;
-    dirLight.shadow.camera.far = 2000;
-    dirLight.shadow.mapSize.width = 2048;
-    dirLight.shadow.mapSize.height = 2048;
-    scene.add(dirLight);    
+  const dirLight = new THREE.DirectionalLight("#ffffff");
+  dirLight.position.set(10, 20, 10);
+  dirLight.intensity = 1;
+  dirLight.castShadow = true;
+  dirLight.shadow.camera.top = 1000;
+  dirLight.shadow.camera.bottom = -1000;
+  dirLight.shadow.camera.left = -1000;
+  dirLight.shadow.camera.right = 1000;
+  dirLight.shadow.camera.far = 2000;
+  dirLight.shadow.mapSize.width = 2048;
+  dirLight.shadow.mapSize.height = 2048;
+  scene.add(dirLight);
 
-    const loader = new GLTFLoader();
+  const loader = new GLTFLoader();
 
-    loader.load("../../public/models/JinxPoseRender.glb", ( gltf ) => {
-      mesh = gltf.scene
-      mesh.scale.set(6, 6, 6);
-      scene.add( mesh );
-      const animations = gltf.animations;
+  loader.load("../../public/models/JinxPoseRender.glb", (gltf) => {
+    mesh = gltf.scene
+    mesh.scale.set(6, 6, 6);
+    scene.add(mesh);
+    const animations = gltf.animations;
 
 
-					mixer = new THREE.AnimationMixer( mesh );
-          const waveAction = mixer.clipAction( animations[ 0 ] );
-          waveAction.play()
-    });
+    mixer = new THREE.AnimationMixer(mesh);
+    const waveAction = mixer.clipAction(animations[0]);
+    waveAction.play()
+  });
 
-    const renderer = new THREE.WebGLRenderer({
+  const renderer = new THREE.WebGLRenderer({
     //   canvas: canvas,
-      antialias: true,
-      alpha: false,
-    });
-    
-    renderer.setClearColor( 0x000000, 0 );
+    antialias: true,
+    alpha: false,
+  });
+
+  renderer.setClearColor(0x000000, 0);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.autoClear = true;
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  container.appendChild(renderer.domElement);
+
+  document.addEventListener('mousemove', onDocumentMouseMove);
+  window.addEventListener("resize", onWindowResize, false);
+
+  function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.autoClear = true;
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-    container.appendChild(renderer.domElement);
+    render();
+  }
 
-    document.addEventListener( 'mousemove', onDocumentMouseMove );
-    window.addEventListener("resize", onWindowResize, false);
+  function onDocumentMouseMove(event) {
+    mouseX = (event.clientX - windowHalfX);
+    mouseY = (event.clientY - windowHalfY);
+  }
 
-    function onWindowResize() {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      render();
+  clock = new THREE.Clock();
+  function animate() {
+    requestAnimationFrame(animate);
+    var delta = clock.getDelta();
+
+    if (mixer) mixer.update(delta);
+    render();
+  }
+
+  function render() {
+    targetX = mouseX * .001;
+    // targetY = mouseY * .001;
+
+    if (mesh) {
+      mesh.rotation.y += 0.05 * (targetX - mesh.rotation.y);
+      // mesh.rotation.x += 0.05 * ( targetY - mesh.rotation.x );
     }
+    renderer.render(scene, camera);
+  }
 
-    function onDocumentMouseMove( event ) {
-      mouseX = ( event.clientX - windowHalfX );
-      mouseY = ( event.clientY - windowHalfY );
-    }
+  animate();
 
-    clock = new THREE.Clock();
-    function animate() {
-      requestAnimationFrame(animate);
-      var delta = clock.getDelta();
-  
-    if ( mixer ) mixer.update( delta );
-      render();
-    }
+  var swiper = new Swiper(".swiper", {
+    // loop: true,
+    autoplay: true,
+    autoplayTimeout: 1000,
+    autoplayHoverPause: true,
 
-    function render() {
-      targetX = mouseX * .001;
-				// targetY = mouseY * .001;
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    spaceBetween: 30,
+    converflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 300,
+      modifier: 1,
+      slideShadows: false
+    },
 
-				if ( mesh ) {
-					mesh.rotation.y += 0.05 * ( targetX - mesh.rotation.y );
-					// mesh.rotation.x += 0.05 * ( targetY - mesh.rotation.x );
-				}
-      renderer.render(scene, camera);
-    }
-
-    animate();   
-  </script>
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  })
+</script>
 
 </html>
