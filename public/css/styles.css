@@ -1,10 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Tektur&display=swap');
+@font-face {
+  font-family: TechnoRaceItalic;
+  src: url("/public/fonts/TechnoRaceItalic-eZRWe.otf")
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Tektur', cursive;
+  font-family: TechnoRaceItalic;
 }
 html,
 body {
@@ -18,12 +21,14 @@ body {
 }
 .main section {
   position: relative;
-  height: 100vh;
 }
 canvas {
   position: absolute;
   max-width: 100%;
   max-height: 100%;
+}
+#project{
+  height: 100vh;
 }
 #loop {
   display: flex;
